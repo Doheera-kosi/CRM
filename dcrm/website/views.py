@@ -26,4 +26,6 @@ def home(request):
 
 
 def logout_user(request):
-    pass
+    logout(request)
+    messages.success(request, "Logged Out Successfully")
+    return redirect('home')
