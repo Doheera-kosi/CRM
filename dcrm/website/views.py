@@ -15,10 +15,10 @@ def home(request):
 
         if user is not None:
             login(request, user)
-            messages.success(request, "You Have Been Loggen In!")
+            messages.success(request, "Logged In Successful...!")
             return redirect('home')
         else:
-            messages.success(request, "There Was An Error Logging In, Try Again...")
+            messages.success(request, "Invalid Credentials, Try Again...")
         return redirect('home')
     else:
         return render(request, 'home.html', {})
