@@ -6,7 +6,22 @@
 
   {% if user.is_authenticated %}
 
-  <h1>Hello Ican</h1>
+  <h1>Records>>></h1>
+  {% if records %}
+    {% for record in records %}
+    {{ record.id }} 
+    {{ record.first_name }} 
+    {{ record.last_name }} 
+    {{ record.email }} 
+    {{ record.phone }} 
+    {{ record.address }} 
+    {{ record.city }} 
+    {{ record.state }} 
+    {{ record.create_at }} 
+    {{ record.zipcode }} 
+    <br />
+    {% endfor %}
+  {% endif %}
 
   {% else %}
 
