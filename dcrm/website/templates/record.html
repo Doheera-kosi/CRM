@@ -1,16 +1,51 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Customer Record:</h1>
+<div class="card">
+  <div class="card-header">
+    {{ customer_record.first_name }}
+    {{ customer_record.last_name }}
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">
 
-  {{ customer_record.first_name }}
-  {{ customer_record.last_name }}<br />
-  {{ customer_record.email }}<br />
-  {{ customer_record.phone }}<br />
-  {{ customer_record.address }}<br />
-  {{ customer_record.city }}<br />
-  {{ customer_record.state }}<br />
-  {{ customer_record.zipcode }}<br />
-  {{ customer_record.created_at }}<br />
-  {{ customer_record.id }}
+      <p class="card-text">
+        <!-- {{ customer_record.first_name }} <br />
+        {{ customer_record.last_name }} <br /> -->
+        <strong>E-mail: </strong>{{ customer_record.email }} 
+      </p>
+
+      <p class="card-text">
+        <strong>Phone: </strong>{{ customer_record.phone }} 
+      </p>
+
+      <p class="card-text">
+        <strong>Address: </strong>{{ customer_record.address }} 
+      </p>
+
+      <p class="card-text">
+        <strong>City: </strong>{{ customer_record.city }} 
+      </p>
+
+      <p class="card-text">
+        <strong>State: </strong>{{ customer_record.state }} 
+      </p>
+
+      <p class="card-text">
+        <strong>Zipcode: </strong>{{ customer_record.zipcode }} 
+      </p>
+
+      <p class="card-text">
+        <strong>Created at: </strong>{{ customer_record.created_at }} 
+      </p>
+
+      <p class="card-text">
+        <strong>ID: </strong>{{ customer_record.id }} 
+      </p>
+
+    </h5>
+  </div>
+</div><br>
+<a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
+
 {% endblock %}
